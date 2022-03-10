@@ -13,6 +13,7 @@
 .presets-list {
     display:flex;
     flex-direction: column;
+    margin: 0 1.5vw 0 1.5vw;
 }
 .presets-list button {
     background-color: rgb(202, 202, 202);
@@ -36,6 +37,11 @@
 label {
     font-weight: bold;
     font-size:2vw;
+    margin: 0.5vw;
+}
+input#city-search {
+    margin: 0.5vw;
+    width: 80%;
 }
 .body-container {
     display: flex;
@@ -48,12 +54,23 @@ label {
 }
 .sidenav {
     width:20%;
+    background-color: yellow;
+    text-align: center;
 }
 .current-weather {
     width:80%;
-    background-color:green;
+    max-height: 33%;
+    background-color:rgb(2, 179, 46);
 }
 .future-weather {
     width:80%;
     background-color:red;
+}
+.current-title {
+    display:flex;
+    flex-direction: row;
+}
+.future-cards {
+    display:flex;
+    flex-direction: row;
 }

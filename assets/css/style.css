@@ -1,0 +1,59 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title-banner {
+  margin: 1vw;
+  width: 98%;
+  background-image: linear-gradient(to right, rgb(37, 105, 184) , rgb(11, 0, 75));
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.presets-list {
+    display:flex;
+    flex-direction: column;
+}
+.presets-list button {
+    background-color: rgb(202, 202, 202);
+    padding: 1vw;
+    width: 15vw;
+    border-radius: 0.5vw;
+    border-color:rgb(202, 202, 202);
+    margin: 0.5vw;
+    font-weight: bold;
+}
+#save-task {
+    background-color: rgb(68, 171, 255);
+    padding: 1vw;
+    width: 15vw;
+    border-radius: 0.5vw;
+    border-color:rgb(68, 171, 255);
+    margin: 0.5vw;
+    font-weight: bold;
+    color: white;
+}
+label {
+    font-weight: bold;
+    font-size:2vw;
+}
+.body-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2.5vw 0 2.5vw;
+}
+.weather-cards {
+    display: flex;
+    flex-direction: column;
+}
+.sidenav {
+    width:20%;
+}
+.current-weather {
+    width:80%;
+    background-color:green;
+}
+.future-weather {
+    width:80%;
+    background-color:red;
+}

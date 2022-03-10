@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
@@ -21,9 +21,52 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header class="hero">
+      <h1 class="title-banner">Weather Dashboard</h1>
+    </header>
+    <div class="body-container">
+      <div class="sidenav">
+        <form>
+          <label for="city-search">Search for a City:</label><br />
+          <input
+            type="text"
+            id="city-search"
+            name="city-search"
+            placeholder="City Name"
+          />
+        </form>
+        <button class="btn" id="save-task">Search</button>
+        <div class="city-presets">
+          <div class="presets-list">
+            <button class="preset-1">Austin</button>
+            <button class="preset-3">Chicago</button>
+            <button class="preset-2">New York</button>
+            <button class="preset-4">Orlando</button>
+            <button class="preset-5">San Francisco</button>
+            <button class="preset-6">Seattle</button>
+            <button class="preset-7">Denver</button>
+            <button class="preset-8">Atlanta</button>
+          </div>
+        </div>
+      </div>
+      <div class="weather-cards">
+        <div class="current-weather">current weather card</div>
+        <div class="future-weather">
+          <div class="future-title">5-Day Forecast:</div>
+          <div class="future-cards">
+            <div class="future-card-1">future weather 1</div>
+            <div class="future-card-2">future weather 2</div>
+            <div class="future-card-3">future weather 3</div>
+            <div class="future-card-4">future weather 4</div>
+            <div class="future-card-5">future weather 5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>

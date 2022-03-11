@@ -1,5 +1,7 @@
-var getUserRepos = function() {
-    fetch("https://api.github.com/users/Antony-Q/repos");
-};
+fetch("https://api.github.com/users/Antony-Q/repos").then(function(response) {
+  response.json().then(function(data) {
+    console.log(data);
+  });
+});
 
-getUserRepos();
+console.log("outside");

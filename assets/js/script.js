@@ -10,7 +10,8 @@
 //       });
 //     });
 //   };
-  
+$(document).ready(function(){
+
 const api_url = 
       "https://api.openweathermap.org/data/2.5/onecall?lat=30.27&lon=-97.74&exclude=minutely,alerts,hourly&appid=c6c3742f8d69c2897e68da43607165dc";
   
@@ -23,11 +24,37 @@ async function getWeatherAPI(url) {
     // Storing data in form of JSON
     var data = await response.json();
     console.log(data);
-    if (response) {
-    }
 }
   
   getWeatherAPI(api_url);
+
+// Function to define innerHTML for HTML table
+function show(data) {
+    let tab = 
+        `<tr>
+          <th>dt</th>
+          <th>sunrise</th>
+          <th>sunset</th>
+          <th>temp</th>
+         </tr>`;
+    
+    // Loop to access all rows 
+    for (let r of data.current) {
+        tab += `<tr> 
+    <td>${r.dt} </td>
+    <td>${r.sunrise}</td>
+    <td>${r.sunset}</td> 
+    <td>${r.temp}</td>          
+</tr>`;
+    }
+
+show(data);
+
+    // Setting innerHTML as tab variable
+    document.getElementById("current-weather-id").innerHTML = tab;
+}});
+
+
 
 
 

@@ -21,11 +21,36 @@ $(document).ready(function () {
         $('.data-point-4').html(`<div>UV Index: ${data.current.uvi}</div>`)
 
         // Forecast cards
-        $('.future-card-1').html(`<div>Temp: ${data.daily[0].temp.day}<div>Wind: ${data.daily[0].wind_speed}<div>Humidity: ${data.daily[0].humidity}</div></div></div>`)
-        $('.future-card-2').html(`<div>Temp: ${data.daily[1].temp.day}<div>Wind: ${data.daily[1].wind_speed}<div>Humidity: ${data.daily[1].humidity}</div></div></div>`)
-        $('.future-card-3').html(`<div>Temp: ${data.daily[2].temp.day}<div>Wind: ${data.daily[2].wind_speed}<div>Humidity: ${data.daily[2].humidity}</div></div></div>`)
-        $('.future-card-4').html(`<div>Temp: ${data.daily[3].temp.day}<div>Wind: ${data.daily[3].wind_speed}<div>Humidity: ${data.daily[3].humidity}</div></div></div>`)
-        $('.future-card-5').html(`<div>Temp: ${data.daily[4].temp.day}<div>Wind: ${data.daily[4].wind_speed}<div>Humidity: ${data.daily[4].humidity}</div></div></div>`)
+        $('.future-card-1').html(`
+            <div>${data.daily[0].weather[0].icon}
+            <div>Temp: ${data.daily[0].temp.day}
+            <div>Wind: ${data.daily[0].wind_speed}
+            <div>Humidity: ${data.daily[0].humidity}
+            </div></div></div></div>`)
+        $('.future-card-2').html(`
+            <div>${data.daily[1].weather[0].icon}
+            <div>Temp: ${data.daily[1].temp.day}
+            <div>Wind: ${data.daily[1].wind_speed}
+            <div>Humidity: ${data.daily[1].humidity}
+            </div></div></div></div>`)
+        $('.future-card-3').html(`
+            <div>${data.daily[2].weather[0].icon}
+            <div>Temp: ${data.daily[2].temp.day}
+            <div>Wind: ${data.daily[2].wind_speed}
+            <div>Humidity: ${data.daily[2].humidity}
+            </div></div></div></div>`)
+        $('.future-card-4').html(`
+            <div>${data.daily[3].weather[0].icon}
+            <div>Temp: ${data.daily[3].temp.day}
+            <div>Wind: ${data.daily[3].wind_speed}
+            <div>Humidity: ${data.daily[3].humidity}
+            </div></div></div></div>`)
+        $('.future-card-5').html(`
+            <div>${data.daily[4].weather[0].icon}
+            <div>Temp: ${data.daily[4].temp.day}
+            <div>Wind: ${data.daily[4].wind_speed}
+            <div>Humidity: ${data.daily[4].humidity}
+            </div></div></div></div>`)
     };
 
     // Variables for search query DOM

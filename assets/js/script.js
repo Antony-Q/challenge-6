@@ -12,7 +12,7 @@ $(document).ready(function () {
         var data = await response.json();
         console.log(data);
 
-        // Display data in designated html elements
+        // Display data in designated html elements using second API request
         $('.data-point-1').html(`<div>Temp: ${data.current.temp}</div>`)
         $('.data-point-2').html(`<div>Wind: ${data.current.wind_speed}</div>`)
         $('.data-point-3').html(`<div>Humidity: ${data.current.humidity}</div>`)
@@ -41,10 +41,19 @@ $(document).ready(function () {
         var data = await response.json();
         console.log(data);
         getWeatherAPI(data.coord.lat, data.coord.lon);
+
+        // Live time function
+        var liveDate = document.getElementById("currentDate");
+
+        document.getElementById("currentDate").innerHTML =
+            `${moment().format('L')}`;
+
+        setInterval(function () { liveDate.innerHTML = `${moment().format('L')}` }, 1000);
+
+        // Display data in designated html elements using first API request
+        $('.city-name').html(`<div>${data.name}${data.weather[0].icon}</div>`)
     }
 });
-
-
 
 
 

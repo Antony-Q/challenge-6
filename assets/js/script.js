@@ -1,6 +1,14 @@
 // JQuery initialization
 $(document).ready(function () {
 
+    // Current date set
+    var liveDate = document.getElementById("currentDate");
+
+    document.getElementById("currentDate").innerHTML =
+        `${moment().format('llll')}`;
+
+    setInterval(function () { liveDate.innerHTML = `${moment().format('llll')}` }, 1000);
+
     // Defining async function
     async function getWeatherAPI(lat, lon) {
         const api_url =
@@ -22,30 +30,35 @@ $(document).ready(function () {
 
         // Forecast cards
         $('.future-card-1').html(`
+        <div>${moment().add(1, 'days').calendar()}</div>
             <div>${data.daily[0].weather[0].icon}
             <div>Temp: ${data.daily[0].temp.day}
             <div>Wind: ${data.daily[0].wind_speed}
             <div>Humidity: ${data.daily[0].humidity}
             </div></div></div></div>`)
         $('.future-card-2').html(`
+        <div>${moment().add(2, 'days').calendar()}</div>
             <div>${data.daily[1].weather[0].icon}
             <div>Temp: ${data.daily[1].temp.day}
             <div>Wind: ${data.daily[1].wind_speed}
             <div>Humidity: ${data.daily[1].humidity}
             </div></div></div></div>`)
         $('.future-card-3').html(`
+        <div>${moment().add(3, 'days').calendar()}</div>
             <div>${data.daily[2].weather[0].icon}
             <div>Temp: ${data.daily[2].temp.day}
             <div>Wind: ${data.daily[2].wind_speed}
             <div>Humidity: ${data.daily[2].humidity}
             </div></div></div></div>`)
         $('.future-card-4').html(`
+        <div>${moment().add(4, 'days').calendar()}</div>
             <div>${data.daily[3].weather[0].icon}
             <div>Temp: ${data.daily[3].temp.day}
             <div>Wind: ${data.daily[3].wind_speed}
             <div>Humidity: ${data.daily[3].humidity}
             </div></div></div></div>`)
         $('.future-card-5').html(`
+        <div>${moment().add(5, 'days').calendar()}</div>
             <div>${data.daily[4].weather[0].icon}
             <div>Temp: ${data.daily[4].temp.day}
             <div>Wind: ${data.daily[4].wind_speed}
@@ -77,12 +90,48 @@ $(document).ready(function () {
         getWeatherAPI(data.coord.lat, data.coord.lon);
 
         // Live time function
-        var liveDate = document.getElementById("currentDate");
+        // Current date
 
-        document.getElementById("currentDate").innerHTML =
-            `${moment().format('L')}`;
+        //     // Future dates
+        //         // Future date 1
+        // var futureDate1 = document.getElementById("future-date-1");
 
-        setInterval(function () { liveDate.innerHTML = `${moment().format('L')}` }, 1000);
+        // document.getElementById("future-date-1").innerHTML =
+        //     `${moment().add(1, 'days').calendar()}`;
+
+        // setInterval(function () { futureDate1.innerHTML = `${moment().add(1, 'days').calendar()}` }, 1000);
+
+        //         // Future date 2
+        // var futureDate1 = document.getElementById("future-date-2");
+
+        // document.getElementById("future-date-2").innerHTML =
+        //     `${moment().add(2, 'days').calendar()}`;
+
+        // setInterval(function () { futureDate1.innerHTML = `${moment().add(2, 'days').calendar()}` }, 1000);
+
+        //         // Future date 3
+        // var futureDate1 = document.getElementById("future-date-3");
+
+        // document.getElementById("future-date-3").innerHTML =
+        //     `${moment().add(3, 'days').calendar()}`;
+
+        // setInterval(function () { futureDate1.innerHTML = `${moment().add(3, 'days').calendar()}` }, 1000);
+
+        //         // Future date 4
+        // var futureDate1 = document.getElementById("future-date-4");
+
+        // document.getElementById("future-date-4").innerHTML =
+        //     `${moment().add(4, 'days').calendar()}`;
+
+        // setInterval(function () { futureDate1.innerHTML = `${moment().add(4, 'days').calendar()}` }, 1000);
+
+        //         // Future date 5
+        // var futureDate1 = document.getElementById("future-date-5");
+
+        // document.getElementById("future-date-5").innerHTML =
+        //     `${moment().add(5, 'days').calendar()}`;
+
+        // setInterval(function () { futureDate1.innerHTML = `${moment().add(5, 'days').calendar()}` }, 1000);
 
         // Display data in designated html elements using first API request
         $('.city-name').html(`<div>${data.name}</div>`)

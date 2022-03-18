@@ -89,54 +89,37 @@ $(document).ready(function () {
         console.log(data);
         getWeatherAPI(data.coord.lat, data.coord.lon);
 
-        // Live time function
-        // Current date
-
-        //     // Future dates
-        //         // Future date 1
-        // var futureDate1 = document.getElementById("future-date-1");
-
-        // document.getElementById("future-date-1").innerHTML =
-        //     `${moment().add(1, 'days').calendar()}`;
-
-        // setInterval(function () { futureDate1.innerHTML = `${moment().add(1, 'days').calendar()}` }, 1000);
-
-        //         // Future date 2
-        // var futureDate1 = document.getElementById("future-date-2");
-
-        // document.getElementById("future-date-2").innerHTML =
-        //     `${moment().add(2, 'days').calendar()}`;
-
-        // setInterval(function () { futureDate1.innerHTML = `${moment().add(2, 'days').calendar()}` }, 1000);
-
-        //         // Future date 3
-        // var futureDate1 = document.getElementById("future-date-3");
-
-        // document.getElementById("future-date-3").innerHTML =
-        //     `${moment().add(3, 'days').calendar()}`;
-
-        // setInterval(function () { futureDate1.innerHTML = `${moment().add(3, 'days').calendar()}` }, 1000);
-
-        //         // Future date 4
-        // var futureDate1 = document.getElementById("future-date-4");
-
-        // document.getElementById("future-date-4").innerHTML =
-        //     `${moment().add(4, 'days').calendar()}`;
-
-        // setInterval(function () { futureDate1.innerHTML = `${moment().add(4, 'days').calendar()}` }, 1000);
-
-        //         // Future date 5
-        // var futureDate1 = document.getElementById("future-date-5");
-
-        // document.getElementById("future-date-5").innerHTML =
-        //     `${moment().add(5, 'days').calendar()}`;
-
-        // setInterval(function () { futureDate1.innerHTML = `${moment().add(5, 'days').calendar()}` }, 1000);
-
         // Display data in designated html elements using first API request
         $('.city-name').html(`<div>${data.name}</div>`)
         $('.weather-icon').html(`<div>${data.weather[0].icon}</div>`)
-    }
+    };
+
+    // Local storage feature
+    $(".btn").on("click", function (e) {
+        var textAreaId = e.currentTarget.dataset.id;
+        var text_to_save = $(`#${textAreaId}`).val();
+        
+        console.log(text_to_save)
+               
+        var history = localStorage.getItem("history") || "{}";
+        history = JSON.parse(history);
+        history[textAreaId] = text_to_save
+        localStorage.setItem("history", JSON.stringify(history)); // save the item
+    })
+    // Retrieve saved input from local storage
+
+    function retrieve() {
+
+        var history = localStorage.getItem("history") || "{}"; // retrieve
+        history = JSON.parse(history)
+
+        for (const textInputId in history) {
+            document.getElementById(textInputId).value = history[textInputId];
+        }
+        $('.preset-1').html(`
+        <div>${history}</div>`)
+        retrieve();
+    };
 });
 
 

@@ -58,6 +58,7 @@ input#city-search {
     text-align: center;
 }
 .current-weather {
+    font-size: 2vw;
     width:80%;
     max-height: 33%;
     background-color:rgb(2, 179, 46);

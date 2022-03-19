@@ -38,7 +38,7 @@ This site was developed using the following technologies:
 The site can be accessed at the following hyperlink:  
 https://antony-q.github.io/challenge-6/
 ## Screenshot:  
-![Weather Dashboard ](https://github.com/Antony-Q/challenge-5/blob/main/challenge_5_screenshot.png)
+![Weather Dashboard ](https://github.com/Antony-Q/challenge-6/blob/main/assets/images/weather_dashboard_screenshot.png)
 ## Contribution  
 Authored by:    
 Antony Quinones  

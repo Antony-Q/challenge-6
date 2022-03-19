@@ -23,46 +23,46 @@ $(document).ready(function () {
         // Display data in designated html elements using second API request
 
         // Current weather card
-        $('.data-point-1').html(`<div>Temp: ${data.current.temp}</div>`)
-        $('.data-point-2').html(`<div>Wind: ${data.current.wind_speed}</div>`)
-        $('.data-point-3').html(`<div>Humidity: ${data.current.humidity}</div>`)
+        $('.data-point-1').html(`<div class="currentTemp">Temp: ${data.current.temp}°F</div>`)
+        $('.data-point-2').html(`<div>Wind: ${data.current.wind_speed} MPH</div>`)
+        $('.data-point-3').html(`<div>Humidity: ${data.current.humidity}%</div>`)
         $('.data-point-4').html(`<div>UV Index: ${data.current.uvi}</div>`)
 
         // Forecast cards
         $('.future-card-1').html(`
-        <div>${moment().add(1, 'days').calendar()}</div>
+        <div class="time-1">${moment().add(1, 'days').calendar()}</div>
             <div>${data.daily[0].weather[0].icon}
-            <div>Temp: ${data.daily[0].temp.day}
-            <div>Wind: ${data.daily[0].wind_speed}
-            <div>Humidity: ${data.daily[0].humidity}
+            <div>Temp: ${data.daily[0].temp.day}°F
+            <div>Wind: ${data.daily[0].wind_speed} MPH
+            <div>Humidity: ${data.daily[0].humidity}%
             </div></div></div></div>`)
         $('.future-card-2').html(`
-        <div>${moment().add(2, 'days').calendar()}</div>
+        <div class="time-2">${moment().add(2, 'days').calendar()}</div>
             <div>${data.daily[1].weather[0].icon}
-            <div>Temp: ${data.daily[1].temp.day}
-            <div>Wind: ${data.daily[1].wind_speed}
-            <div>Humidity: ${data.daily[1].humidity}
+            <div>Temp: ${data.daily[1].temp.day}°F
+            <div>Wind: ${data.daily[1].wind_speed} MPH
+            <div>Humidity: ${data.daily[1].humidity}%
             </div></div></div></div>`)
         $('.future-card-3').html(`
-        <div>${moment().add(3, 'days').calendar()}</div>
+        <div class="time-3">${moment().add(3, 'days').calendar()}</div>
             <div>${data.daily[2].weather[0].icon}
-            <div>Temp: ${data.daily[2].temp.day}
-            <div>Wind: ${data.daily[2].wind_speed}
-            <div>Humidity: ${data.daily[2].humidity}
+            <div>Temp: ${data.daily[2].temp.day}°F
+            <div>Wind: ${data.daily[2].wind_speed} MPH
+            <div>Humidity: ${data.daily[2].humidity}%
             </div></div></div></div>`)
         $('.future-card-4').html(`
-        <div>${moment().add(4, 'days').calendar()}</div>
+        <div class="time-4">${moment().add(4, 'days').calendar()}</div>
             <div>${data.daily[3].weather[0].icon}
-            <div>Temp: ${data.daily[3].temp.day}
-            <div>Wind: ${data.daily[3].wind_speed}
-            <div>Humidity: ${data.daily[3].humidity}
+            <div>Temp: ${data.daily[3].temp.day}°F
+            <div>Wind: ${data.daily[3].wind_speed} MPH
+            <div>Humidity: ${data.daily[3].humidity}%
             </div></div></div></div>`)
         $('.future-card-5').html(`
-        <div>${moment().add(5, 'days').calendar()}</div>
+        <div class="time-5">${moment().add(5, 'days').calendar()}</div>
             <div>${data.daily[4].weather[0].icon}
-            <div>Temp: ${data.daily[4].temp.day}
-            <div>Wind: ${data.daily[4].wind_speed}
-            <div>Humidity: ${data.daily[4].humidity}
+            <div>Temp: ${data.daily[4].temp.day}°F
+            <div>Wind: ${data.daily[4].wind_speed} MPH
+            <div>Humidity: ${data.daily[4].humidity}%
             </div></div></div></div>`)
     };
 
@@ -90,17 +90,17 @@ $(document).ready(function () {
         getWeatherAPI(data.coord.lat, data.coord.lon);
 
         // Display data in designated html elements using first API request
-        $('.city-name').html(`<div>${data.name}</div>`)
-        $('.weather-icon').html(`<div>${data.weather[0].icon}</div>`)
+        $('.city-name').html(`<div class="current-name-style">${data.name}</div>`)
+        $('.weather-icon').html(`<div class="current-icon-style">${data.weather[0].icon}</div>`)
     };
 
     // Local storage feature
     $(".btn").on("click", function (e) {
         var textAreaId = e.currentTarget.dataset.id;
         var text_to_save = $(`#${textAreaId}`).val();
-        
+
         console.log(text_to_save)
-               
+
         var history = localStorage.getItem("history") || "{}";
         history = JSON.parse(history);
         history[textAreaId] = text_to_save

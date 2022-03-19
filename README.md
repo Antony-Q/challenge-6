@@ -20,12 +20,6 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
-## PSEUDOCODE
-
-<!--  
-
--->
-
 ## Description  
 The Weather Dashboard application utilizes third-party APIs and will run in the browser and feature dynamically updated HTML and CSS, to display current and future weather conditions for a 5-day forecast, in real-time.
 ## Built With  
@@ -36,12 +30,15 @@ This site was developed using the following technologies:
 * jQuery
 * APIs
 ## Directions for Future Development  
-* ---
+* There will be a function that utilizes the user input for city searches to dynamically create a search history below the search bar
+* A function that converts the temperature from it's default, in Kelvin, to Fahrenheit
+* A function that converts the icon codes into corresponding icons for differnet types of weather
+* An edit to the sidenav to make it responsive to the scale of the viewport, as with the rest of the app
 ## Website  
 The site can be accessed at the following hyperlink:  
 https://antony-q.github.io/challenge-6/
 ## Screenshot:  
-![Work Day Scheduler ](https://github.com/Antony-Q/challenge-5/blob/main/challenge_5_screenshot.png)
+![Weather Dashboard ](https://github.com/Antony-Q/challenge-5/blob/main/challenge_5_screenshot.png)
 ## Contribution  
 Authored by:    
 Antony Quinones  
